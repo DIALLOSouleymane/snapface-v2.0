@@ -6,6 +6,7 @@
     <!-- Utilisation de l'attribute binding ou liaison par attribut pour l'affichage de l'image : -->
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
     <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location">Photo prise à <b>{{ faceSnap.location }} </b></p>
     <p>
         <!-- Utilisation de l'event binding () -->
         <button (click)="onSnap()">{{ buttonText }}</button>

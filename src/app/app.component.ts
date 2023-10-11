@@ -12,29 +12,31 @@ export class AppComponent implements OnInit {
   myLastSnap!: FaceSnap;
 
   ngOnInit(): void {
-      this.mySnap = new FaceSnap(
-        'La poupée de ma grand-mère',
-        'Mon meilleur ami depuis tout petit !',
-        'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        new Date(),
-        0
-      );
-      this.myOtherSnap = new FaceSnap(
-        'Three Rock Mountain',
-        'Un endroit magnifique pour les rendonnées',
-        '../assets/White_Rock_Mountain.jpg',
-        new Date(),
-        200
-      );
+      this.mySnap =  {
+        title: 'La poupée de ma grand-mère',
+        description: 'Mon meilleur ami depuis tout petit !',
+        imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+        createdDate: new Date(),
+        snaps: 0,
+        location: 'Dakar'
+      };
+      this.myOtherSnap = {
+        title: 'Three Rock Mountain',
+        description: 'Un endroit magnifique pour les rendonnées',
+        imageUrl: '../assets/White_Rock_Mountain.jpg',
+        createdDate: new Date(),
+        snaps: 200,
+        location: 'Paris'
+      };
 
-      this.myLastSnap = new FaceSnap(
-        'Un bon repas',
-        'Mmmh, Que c\'est bon !',
-        'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
-        new Date(),
-        19
+      this.myLastSnap = {
+        title: 'Un bon repas',
+        description: 'Mmmh, Que c\'est bon !',
+        imageUrl: 'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
+        createdDate: new Date(),
+        snaps: 19
 
-      );
+      };
   }
-  
+
 }
