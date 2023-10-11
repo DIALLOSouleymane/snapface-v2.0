@@ -1,4 +1,2 @@
 <!-- Utilisation de l'attribute binding pour lier l'objet à la propriété personalisée faceSnap -->
-<app-snap-face [faceSnap]="mySnap"></app-snap-face>
-<app-snap-face [faceSnap]="myOtherSnap"></app-snap-face>
-<app-snap-face [faceSnap]="myLastSnap"></app-snap-face>
+<app-snap-face *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-snap-face>
