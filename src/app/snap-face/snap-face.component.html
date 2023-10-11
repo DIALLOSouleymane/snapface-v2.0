@@ -2,7 +2,7 @@
     <!-- Utilisation du string interpolation pour l'affichage des données -->
 
     <h2>{{ faceSnap.title | titlecase }}</h2>
-    <p>Mise en ligne le : <b>{{ faceSnap.createdDate }}</b></p>
+    <p>Mise en ligne le : <b>{{ faceSnap.createdDate | date: 'd MMMM yyyy, à HH:mm' }}</b></p>
     <!-- Utilisation de l'attribute binding ou liaison par attribut pour l'affichage de l'image : -->
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
     <p>{{ faceSnap.description }}</p>
