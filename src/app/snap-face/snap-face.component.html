@@ -1,10 +1,12 @@
-<!-- Utilisation du string interpolation pour l'affichage des données -->
+<div class="face-snap-card">
+    <!-- Utilisation du string interpolation pour l'affichage des données -->
 
-<h2>{{ title }}</h2>
-<p>Mise en ligne le : <b>{{ createdDate }}</b></p>
-<!-- Utilisation de l'attribute binding ou liaison par attribut pour l'affichage de l'image : -->
-<p>
-    <img [src]="imageUrl" [alt]="title">
-</p>
-<p>{{ description }}</p>
-<p>👍 {{ snaps }}</p>
+    <h2>{{ title }}</h2>
+    <p>Mise en ligne le : <b>{{ createdDate }}</b></p>
+    <!-- Utilisation de l'attribute binding ou liaison par attribut pour l'affichage de l'image : -->
+    <p>
+        <img [src]="imageUrl" [alt]="title">
+    </p>
+    <p>{{ description }}</p>
+    <p>👍 {{ snaps }}</p>
+</div>
