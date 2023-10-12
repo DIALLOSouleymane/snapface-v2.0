@@ -1,3 +1,8 @@
 <header>
     <h1>snapface</h1>
+    <nav>
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <!-- L'option : routerLinkActiveOptions permet de ne considérer que la route active exacte (ignore donc le parent de la route) -->
+        <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
+    </nav>
 </header>
