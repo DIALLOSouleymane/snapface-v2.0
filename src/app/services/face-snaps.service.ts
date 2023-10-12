@@ -56,4 +56,8 @@ export class FaceSnapService {
     
         }
       ];
+
+      getAllFaceSnaps(): FaceSnap[] {
+        return this.faceSnaps;
+      }
 }
