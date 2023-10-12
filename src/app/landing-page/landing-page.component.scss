@@ -1,6 +1,6 @@
 .landing-block {
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -59%);
 }
@@ -8,4 +8,8 @@
 .landing-links {
     width: 100%;
     text-align: center;
+}
+
+button {
+    font-size: 20px;
 }
