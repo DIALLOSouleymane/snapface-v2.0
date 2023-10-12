@@ -23,10 +23,10 @@ export class SnapFaceComponent implements OnInit {
     if (this.buttonText === 'Oh Snap!'){
       // this.faceSnap.snaps ++;
       // Utilisation du service
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id);
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
       this.buttonText = 'Oops, unSnap!';
     } else{
-      this.faceSnap.snaps--;
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap')
       this.buttonText = 'Oh Snap!';
     }
   }
