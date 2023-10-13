@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapService } from '../services/face-snaps.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { FaceSnapService } from '../services/face-snaps.service';
 })
 export class SnapFaceComponent implements OnInit {
   // Injection de FaceSnapService afin d'utiliser ses méthodes
-  constructor(private faceSnapsService: FaceSnapService) { }
+  constructor(private faceSnapsService: FaceSnapService,
+    private router: Router) { }
   // Création d'un objet injectable
   @Input() faceSnap!: FaceSnap;
   buttonText!: string;
@@ -29,6 +31,10 @@ export class SnapFaceComponent implements OnInit {
       this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap')
       this.buttonText = 'Oh Snap!';
     }
+  }
+
+  onViewFaceSnap() {
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
   }
 
 }
