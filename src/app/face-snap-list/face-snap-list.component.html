@@ -1,2 +1,2 @@
 <!-- Utilisation de l'attribute binding pour lier l'objet à la propriété personalisée faceSnap -->
-<app-snap-face *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-snap-face>
+<app-snap-face *ngFor="let faceSnap of faceSnaps$ | async" [faceSnap]="faceSnap"></app-snap-face>
