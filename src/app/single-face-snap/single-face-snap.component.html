@@ -10,7 +10,7 @@
     <p *ngIf="faceSnap.location">Photo prise à <b>{{ faceSnap.location }} </b></p>
     <p>
         <!-- Utilisation de l'event binding () -->
-        <button (click)="onSnap()">{{ buttonText }}</button>
+        <button (click)="onSnap(faceSnap.id)">{{ buttonText }}</button>
         <span [ngStyle]="{ color : 'rgb(0, '+ faceSnap.snaps + ', 0)'}">
             💛 {{ faceSnap.snaps }}
         </span>
