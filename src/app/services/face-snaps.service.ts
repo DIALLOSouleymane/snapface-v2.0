@@ -11,7 +11,7 @@ export class FaceSnapService {
 
     constructor(private http: HttpClient) { }
 
-    faceSnaps: FaceSnap[] = [
+    /* faceSnaps: FaceSnap[] = [
         {
             id: 1,
             title: 'La poupée de ma grand-mère',
@@ -66,14 +66,16 @@ export class FaceSnapService {
             snaps: 19
     
         }
-      ];
+      ]; */
 
+      //   Changement du lien d'écoute vers le serveur backend distant :
       getAllFaceSnaps(): Observable<FaceSnap[]> {
-        return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
+        // return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
+        return this.http.get<FaceSnap[]>('https://snapface-v2-0-backend-data.onrender.com/facesnaps');
       }
 
       getFaceSnapById(faceSnapId: number): Observable<FaceSnap> {
-        return this.http.get<FaceSnap>(`http://localhost:3000/facesnaps/${faceSnapId}`);
+        return this.http.get<FaceSnap>(`https://snapface-v2-0-backend-data.onrender.com/facesnaps/${faceSnapId}`);
       }
 
       snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -84,7 +86,7 @@ export class FaceSnapService {
             })),
             // Utilisation d'un observable de haut niveau
             switchMap(updatedFaceSnap => this.http.put<FaceSnap>(
-                `http://localhost:3000/facesnaps/${faceSnapId}`, updatedFaceSnap)
+                `https://snapface-v2-0-backend-data.onrender.com/facesnaps/${faceSnapId}`, updatedFaceSnap)
             )
         );
       }
@@ -100,7 +102,7 @@ export class FaceSnapService {
                 id: previousFacesnap.id + 1
             })),
             switchMap(newFacesnap => this.http.post<FaceSnap>(
-                'http://localhost:3000/facesnaps', newFacesnap
+                'https://snapface-v2-0-backend-data.onrender.com/facesnaps', newFacesnap
             ))
         );
     }
